@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css';
-import ExpenseItem from './components/ExpenseItem';
 import NoName from './NoName';
+import ExpenseItem from './components/ExpenseItem';
 
 function App() {
   const $h2 = <h2>반가워요~~</h2>;
 
   return (
     <>
+      <ExpenseItem />
       <NoName />
       <div className='App'>
         <h1>메롱메롱</h1>
