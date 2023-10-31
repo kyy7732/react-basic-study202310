@@ -1,29 +1,48 @@
 import React from 'react';
 import './App.css';
-import NoName from './NoName';
 import ExpenseItem from './components/ExpenseItem';
+// 배열이나 함수 같은경우는 중괄호 사용
 
-function App() {
-  const $h2 = <h2>반가워요~~</h2>;
+const App = () => {
+  // 지출 항목 객체 배열
+
+  const expenses = [
+    {
+      title: '바나나',
+      price: 2000,
+      date: new Date(2023, 3, 23),
+    },
+    {
+      title: 'BBQ치킨',
+      price: 20000,
+      date: new Date(2023, 5, 21),
+    },
+    {
+      title: '도미노피자',
+      price: 35000,
+      date: new Date(2023, 7, 4),
+    },
+  ];
 
   return (
     <>
-      <ExpenseItem />
-      <NoName />
-      <div className='App'>
-        <h1>메롱메롱</h1>
-        {$h2}
-      </div>
-      <div className='noname'>
-        <input type='text' />
-        <p>
-          오늘은 월요일 입니다.
-          <br />
-          그래서 공부가 하기 싫어요~
-        </p>
-      </div>
+      <ExpenseItem
+        title={expenses[0].title}
+        price={expenses[0].price}
+        date={expenses[0].date}
+      />
+      <ExpenseItem
+        title={expenses[1].title}
+        price={expenses[1].price}
+        date={expenses[1].date}
+      />
+      <ExpenseItem
+        title={expenses[2].title}
+        price={expenses[2].price}
+        date={expenses[2].date}
+      />
     </>
   );
-}
+};
 
 export default App;
