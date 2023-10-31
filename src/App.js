@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import ExpenseItem from './components/ExpenseItem';
+import Expenses from './components/Expenses';
+import Hello from './components/Hello';
 // 배열이나 함수 같은경우는 중괄호 사용
 
 const App = () => {
@@ -26,21 +27,14 @@ const App = () => {
 
   return (
     <>
-      <ExpenseItem
-        title={expenses[0].title}
-        price={expenses[0].price}
-        date={expenses[0].date}
-      />
-      <ExpenseItem
-        title={expenses[1].title}
-        price={expenses[1].price}
-        date={expenses[1].date}
-      />
-      <ExpenseItem
-        title={expenses[2].title}
-        price={expenses[2].price}
-        date={expenses[2].date}
-      />
+      <Expenses items={expenses} />
+      <Hello>
+        <ul>
+          <li>사과</li>
+          <li>포도</li>
+          <li>복숭아</li>
+        </ul>
+      </Hello>
     </>
   );
 };
