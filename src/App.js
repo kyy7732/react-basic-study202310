@@ -24,17 +24,13 @@ const App = () => {
       date: new Date(2023, 7 - 1, 4),
     },
   ];
+  // 리액트 고유 속성: 수정이 필요한 부분만 수정이 되기 때문에 다시 실행이 되는게 아니다.
+  // 화면이 변환되었다고 알려줘야 함.
+  console.log('App 실행!');
 
   return (
     <>
       <Expenses items={expenses} />
-      <Hello>
-        <ul>
-          <li>사과</li>
-          <li>포도</li>
-          <li>복숭아</li>
-        </ul>
-      </Hello>
     </>
   );
 };
