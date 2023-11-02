@@ -43,7 +43,8 @@ const ExpenseForm = ({ onSaveExpense, onToggle }) => {
 
     const newExpense = {
       title: userInput.title,
-      price: userInput.price,
+      // +: 만약 이 문자열이 정수형으로 받아야한다면 +기호를 사용하여 정수형으로 받아줄 수 있다.
+      price: +userInput.price,
       date: new Date(userInput.date),
     };
 
