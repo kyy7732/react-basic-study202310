@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
@@ -36,16 +36,27 @@ const App = () => {
   // 리액트 고유 속성: 수정이 필요한 부분만 수정이 되기 때문에 다시 실행이 되는게 아니다.
   // 화면이 변환되었다고 알려줘야 함.
 
+  // 지출 객체배열을 상태변수로 관리
+  const [expenseList, setExpenseList] = useState(expenses);
+
   // ExpenseForm에게 내려보낼 함수
   const addExpenseHandler = (newExpense) => {
     console.log('App 컴포넌트에서 응답함!');
-    console.log(newExpense);
+
+    const modifyExpense = {
+      ...newExpense,
+      id: expenseList[expenseList.length - 1].id + 1,
+    };
+    console.log(modifyExpense);
+
+    setExpenseList([...expenseList, modifyExpense]);
+    console.log(expenseList);
   };
 
   return (
     <>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenses} />
+      <Expenses items={expenseList} />
     </>
   );
 };
