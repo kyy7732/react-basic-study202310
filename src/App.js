@@ -9,19 +9,28 @@ const App = () => {
 
   const expenses = [
     {
+      id: 1,
       title: '바나나',
       price: 2000,
       date: new Date(2023, 3 - 1, 23),
     },
     {
+      id: 2,
       title: 'BBQ치킨',
       price: 20000,
-      date: new Date(2023, 5 - 1, 21),
+      date: new Date(2022, 5 - 1, 21),
     },
     {
+      id: 3,
       title: '도미노피자',
       price: 35000,
       date: new Date(2023, 7 - 1, 4),
+    },
+    {
+      id: 4,
+      title: '엽기떡볶이',
+      price: 17000,
+      date: new Date(2021, 3 - 1, 28),
     },
   ];
   // 리액트 고유 속성: 수정이 필요한 부분만 수정이 되기 때문에 다시 실행이 되는게 아니다.

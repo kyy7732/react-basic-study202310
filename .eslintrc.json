@@ -18,6 +18,8 @@
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "object-curly-spacing": "off",
-    "prefer-const": "off"
+    "prefer-const": "off",
+    "react/jsx-key": "off",
+    "indent": "off"
   }
 }
