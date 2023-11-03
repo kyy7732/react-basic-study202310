@@ -41,9 +41,8 @@ const App = () => {
     const index = updateGoals.findIndex((goal) => goal.id === id);
     updateGoals.splice(index, 1); // splice 선택된 index값부터 몇개를 삭제하느냐
 
-    // filter는 조건에 맞는것만 출력
+    // filter는 조건에 맞는것만 출력 (조건에 맞는 새로운 배열을 updateGoals로 보내준다.)
     // const updateGoals = goals.filter((goal) => goal.id !== id);
-
     setGoals(updateGoals);
   };
 
