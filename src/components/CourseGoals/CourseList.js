@@ -1,9 +1,19 @@
 import React from 'react';
-import './CourseList.css';
+// import './CourseList.css';
 import CourseItem from './CourseItem';
+
+import styled from 'styled-components';
+
+// ul요소도 만들어내면서 style을 입히는 방법이다.
+const CourseUl = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+`;
+
 const CourseList = ({ items, onDelete }) => {
   return (
-    <ul className='goal-list'>
+    <CourseUl>
       {items.map((item) => {
         return (
           <CourseItem
@@ -13,7 +23,7 @@ const CourseList = ({ items, onDelete }) => {
           />
         );
       })}
-    </ul>
+    </CourseUl>
   );
 };
 
