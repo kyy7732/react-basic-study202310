@@ -10,7 +10,7 @@ const Chart = ({ dataPoints }) => {
   // 1년치 총액
   // a: 리턴결과에 대한 누적값, b: 배열에서 하나씩 꺼낸 값
   const totalValue = dataPointsValues.reduce((a, b) => {
-    // const totalValue = dataPointsValues.reduce((a,b) => a + b, 0) 같은말
+    // const totalValue = dataPointsValues.reduce((a,b) => a + b, 0)같은말 0은초기인덱스값
     // reduce: 특정 배열에서 누적된 값을 더하는 함수
     console.log(`a : ${a}, b: ${b}`);
     return a + b;
