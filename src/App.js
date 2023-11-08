@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import MainHeader from './components/SideEffect/MainHeader/MainHeader';
 import Home from './components/SideEffect/Home/Home';
 import Login from './components/SideEffect/Login/Login';
+// 컨텍스트 불러오기
+import AuthContext from './store/auth-context';
 
 const App = () => {
   // 로그인 상태를 관리하는 변수
@@ -35,18 +37,19 @@ const App = () => {
     localStorage.removeItem('login-flag');
     setIsLoggedIn(false);
   };
-
+  // Provider로 감싸진 children들은 AuthContext의 value를 사용할 수 있다.
   return (
-    <>
-      <MainHeader
-        isAuthenticated={isLoggedIn}
-        onLogout={logoutHandler}
-      />
+    <AuthContext.Provider
+      value={{
+        isLoggedIn: isLoggedIn,
+      }}
+    >
+      <MainHeader onLogout={logoutHandler} />
       <main>
         {isLoggedIn && <Home />}
         {!isLoggedIn && <Login onLogin={loginHandler} />}
       </main>
-    </>
+    </AuthContext.Provider>
   );
 };
 
