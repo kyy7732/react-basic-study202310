@@ -10,11 +10,13 @@ const App = () => {
 
   // 모달을 열어주는 핸들러
   const showCartHandler = () => setCartIsShown(true);
+
   // 모달을 닫아주는 핸들러
   const hideCartHandler = () => setCartIsShown(false);
+
   return (
     <CartProvider>
-      {cartIsShown && <Cart onHideCart={hideCartHandler} />}
+      {cartIsShown && <Cart onClose={hideCartHandler} />}
       <Header onShowCart={showCartHandler} />
       <div id='main'>
         <Meals />

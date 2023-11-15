@@ -10,6 +10,8 @@ $button-color: white;
   list-style: none;
   margin: 0;
   padding: 0;
+  max-height: 20rem;
+  overflow: scroll;
 }
 
 .total {
@@ -28,7 +30,7 @@ $button-color: white;
     font: inherit;
     cursor: pointer;
     background-color: transparent;
-    border: 1px solid $button-color;
+    border: 1px solid $button-bg-color;
     padding: 0.5rem 2rem;
     border-radius: 25px;
     margin-left: 1rem;
@@ -42,8 +44,6 @@ $button-color: white;
   }
 
   .button--alt {
-    // -- : 자바스크립트에서 사용하는 특수문자
-    //
     color: $button-alt-color;
   }
 
